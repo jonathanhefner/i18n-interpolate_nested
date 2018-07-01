@@ -1,28 +1,28 @@
-# I18n::InterpolateNested
-Short description and motivation.
+# i18n-interpolate_nested
 
-## Usage
-How to use my plugin.
+I18n interpolation support for nested values.
+
 
 ## Installation
+
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'i18n-interpolate_nested'
+gem "i18n-interpolate_nested"
 ```
 
 And then execute:
+
 ```bash
-$ bundle
+$ bundle install
 ```
 
-Or install it yourself as:
-```bash
-$ gem install i18n-interpolate_nested
-```
 
 ## Contributing
-Contribution directions go here.
+
+Run `rake test` to run the tests.
+
 
 ## License
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+[MIT License](https://opensource.org/licenses/MIT)
