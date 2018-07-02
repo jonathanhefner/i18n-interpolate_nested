@@ -3,10 +3,6 @@ require "i18n/interpolate_nested"
 
 class I18n::InterpolateNested::Test < ActiveSupport::TestCase
 
-  setup do
-    I18n::InterpolateNested.init
-  end
-
   def test_init_is_idempotent
     expected_handler = I18n.config.missing_interpolation_argument_handler
     expected_pattern = I18n::INTERPOLATION_PATTERN
