@@ -26,9 +26,7 @@ module I18n::InterpolateNested
       end
     end
 
-    pattern = Regexp.union(I18n::INTERPOLATION_PATTERN, /%\{[\w.]+\}/)
-    I18n.send(:remove_const, :INTERPOLATION_PATTERN)
-    I18n.const_set(:INTERPOLATION_PATTERN, pattern)
+    I18n.config.interpolation_patterns << /%\{([\w.]+)\}/
 
     @@initialized = true
   end
