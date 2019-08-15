@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name        = "i18n-interpolate_nested"
   s.version     = I18n::InterpolateNested::VERSION
   s.authors     = ["Jonathan Hefner"]
-  s.email       = ["jonathan.hefner@gmail.com"]
+  s.email       = ["jonathan@hefner.pro"]
   s.homepage    = "https://github.com/jonathanhefner/i18n-interpolate_nested"
   s.summary     = %q{I18n interpolation support for nested values}
   s.license     = "MIT"
