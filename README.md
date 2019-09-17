@@ -1,4 +1,4 @@
-# i18n-interpolate_nested
+# i18n-interpolate_nested [![Build Status](https://travis-ci.org/jonathanhefner/i18n-interpolate_nested.svg?branch=master)](https://travis-ci.org/jonathanhefner/i18n-interpolate_nested)
 
 Enables nested values when using I18n interpolation:
 
