@@ -1,3 +1,5 @@
+Warning[:deprecated] = true if Warning.respond_to?(:[]=)
+
 # Configure I18n with slightly-custom interpolation error handler
 require "i18n"
 I18n.config.tap do |config|
@@ -15,8 +17,5 @@ ActiveRecord::Migrator.migrations_paths = [File.expand_path("../test/dummy/db/mi
 require "rails/test_help"
 
 Rails.backtrace_cleaner.add_filter{|line| line.sub("#{File.dirname(__dir__)}/", "") }
-
-require "rails/test_unit/reporter"
-Rails::TestUnitReporter.executable = "rake test"
 
 ActiveSupport::TestCase.fixtures :all
