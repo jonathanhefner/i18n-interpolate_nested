@@ -5,10 +5,10 @@ class I18n::InterpolateNested::Test < ActiveSupport::TestCase
 
   def test_init_is_idempotent
     expected_handler = I18n.config.missing_interpolation_argument_handler
-    expected_pattern = I18n::INTERPOLATION_PATTERN
+    expected_patterns = I18n.config.interpolation_patterns.dup
     I18n::InterpolateNested.init
     assert_same expected_handler, I18n.config.missing_interpolation_argument_handler
-    assert_same expected_pattern, I18n::INTERPOLATION_PATTERN
+    assert_equal expected_patterns, I18n.config.interpolation_patterns
   end
 
   def test_init_preserves_custom_error_handler
