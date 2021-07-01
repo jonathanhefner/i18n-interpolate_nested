@@ -21,16 +21,10 @@ Structs, OpenStructs, Active Record objects, etc.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem "i18n-interpolate_nested"
-```
-
-And then execute:
+Add the gem to your Gemfile:
 
 ```bash
-$ bundle install
+$ bundle add i18n-interpolate_nested
 ```
 
 **If you are not using Rails,** you will also need to invoke
