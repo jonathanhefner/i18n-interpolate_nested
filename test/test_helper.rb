@@ -1,5 +1,3 @@
-Warning[:deprecated] = true if Warning.respond_to?(:[]=)
-
 # Configure I18n with slightly-custom interpolation error handler
 require "i18n"
 I18n.config.tap do |config|
