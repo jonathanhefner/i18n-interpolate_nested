@@ -1,5 +1,6 @@
 require "test_helper"
 require "i18n/interpolate_nested"
+require "ostruct"
 
 class I18n::InterpolateNested::Test < ActiveSupport::TestCase
 
