@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gemspec
 
 group :development do
+  gem 'ostruct'
   gem 'sqlite3', '>= 2.1'
 end
 
