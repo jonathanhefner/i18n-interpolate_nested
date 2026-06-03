@@ -18,4 +18,6 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 3.2"
 
   spec.add_dependency "i18n", "~> 1.2"
+
+  spec.add_development_dependency "rails", ">= 8.0"
 end

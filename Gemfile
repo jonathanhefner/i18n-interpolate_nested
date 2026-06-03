@@ -4,7 +4,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gemspec
 
 group :development do
-  gem 'rails', '>= 8.0', type: :development
   gem 'sqlite3', '>= 2.1'
 end
 
