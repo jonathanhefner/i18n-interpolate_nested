@@ -4,7 +4,7 @@ require "ostruct"
 
 class I18n::InterpolateNested::Test < ActiveSupport::TestCase
 
-  def test_init_is_idempotent
+  test "init is idempotent" do
     expected_handler = I18n.config.missing_interpolation_argument_handler
     expected_patterns = I18n.config.interpolation_patterns.dup
     I18n::InterpolateNested.init
@@ -12,7 +12,7 @@ class I18n::InterpolateNested::Test < ActiveSupport::TestCase
     assert_equal expected_patterns, I18n.config.interpolation_patterns
   end
 
-  def test_init_preserves_custom_error_handler
+  test "init preserves custom missing interpolation handler" do
     error = assert_raise I18n::MissingInterpolationArgument do
       I18n.interpolate("%{foo}", {})
     end
@@ -20,7 +20,7 @@ class I18n::InterpolateNested::Test < ActiveSupport::TestCase
     assert error.values[:customly_handled]
   end
 
-  def test_nested_keys
+  test "interpolation supports nested keys" do
     symbols = %i[foo bar baz]
 
     (1..symbols.length).map{|n| symbols.take(n) }.each do |keys|
@@ -30,30 +30,30 @@ class I18n::InterpolateNested::Test < ActiveSupport::TestCase
     end
   end
 
-  def test_missing_key
+  test "missing interpolation key uses original error handler" do
     assert_raise I18n::MissingInterpolationArgument do
       I18n.interpolate("%{foo}", bar: "fail")
     end
   end
 
-  def test_nested_nil
+  test "nested nil value interpolates as an empty string" do
     nested = { foo: { bar: nil } }
     assert_equal "", I18n.interpolate("%{foo.bar}", nested)
   end
 
-  def test_missing_nested_key
+  test "missing nested interpolation key uses original error handler" do
     nested = { foo: { bar: nil } }
     assert_raise I18n::MissingInterpolationArgument do
       I18n.interpolate("%{foo.bar.baz}", nested)
     end
   end
 
-  def test_nested_struct
+  test "nested interpolation reads values through #[]" do
     values = { foo: OpenStruct.new(bar: { baz: "qux" }) }
     assert_equal values[:foo][:bar][:baz], I18n.interpolate("%{foo.bar.baz}", values)
   end
 
-  def test_translation_integration
+  test "integration with I18n.t" do
     I18n.backend.store_translations(:en, greeting: "hello, %{name}")
     assert_equal "hello, world", I18n.t(:greeting, name: "world")
   end
